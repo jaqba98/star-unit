@@ -1,0 +1,9 @@
+{
+  "name": "@star-unit/core",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Jakub Olejarczyk",
+  "license": "ISC",
+  "main": "index.js",
+  "keywords": []
+}

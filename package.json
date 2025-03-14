@@ -1,22 +1,13 @@
 {
   "name": "star-unit",
   "version": "1.0.0",
-  "main": "index.js",
-  "bin": {
-    "su": "./dist/index.js"
-  },
-  "scripts": {
-    "build": "npx tsc",
-    "start": "node dist/index.js",
-    "link": "npm link",
-    "publish": "npm publish --access public"
-  },
-  "keywords": [],
+  "description": "",
   "author": "Jakub Olejarczyk",
   "license": "ISC",
-  "description": "",
+  "main": "index.js",
+  "keywords": [],
   "devDependencies": {
-    "@types/node": "^22.13.10",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "@types/node": "^22.13.10"
   }
 }
