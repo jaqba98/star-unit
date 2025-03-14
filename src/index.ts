@@ -1,5 +1,3 @@
-function sayHello() {
-    console.log("Hello")
-}
+#!/usr/bin/env node
 
-sayHello();
+console.log("Hello, World!");
