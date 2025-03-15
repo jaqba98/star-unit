@@ -11,7 +11,7 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@star-unit/cli": "^1.0.1",
-    "@star-unit/core": "^1.0.1"
+    "@star-unit/cli": "file:libs/cli",
+    "@star-unit/core": "file:libs/core"
   }
 }
