@@ -5,9 +5,5 @@
   "author": "Jakub Olejarczyk",
   "license": "ISC",
   "main": "index.js",
-  "keywords": [],
-  "scripts": {
-    "build": "tsc && cp package.json dist/package.json",
-    "publis": "cd dist && npm publish --access public"
-  }
+  "keywords": []
 }

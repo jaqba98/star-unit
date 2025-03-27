@@ -9,9 +9,5 @@
   "devDependencies": {
     "@types/node": "^22.13.10",
     "typescript": "^5.8.2"
-  },
-  "dependencies": {
-    "@star-unit/cli": "file:libs/cli",
-    "@star-unit/core": "file:libs/core"
   }
 }
