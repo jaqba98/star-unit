@@ -1,22 +1,20 @@
-type TestFn = () => void | Promise<void>;
+const tests = [];
 
-const tests: { name: string; fn: TestFn }[] = [];
-
-export function test(name: string, fn: TestFn) {
+function test(name, fn) {
     tests.push({ name, fn });
 }
 
-export function expect(received: any) {
+function expect(received) {
     return {
-        toBe(expected: any) {
+        toBe(expected) {
             if (received !== expected) {
                 throw new Error(`Expected ${received} to be ${expected}`);
             }
-        },
+        }
     };
 }
 
-export async function run() {
+async function run() {
     let passed = 0;
 
     for (const { name, fn } of tests) {
@@ -26,9 +24,11 @@ export async function run() {
             passed++;
         } catch (err) {
             console.error(`✗ ${name}`);
-            console.error(' ', (err as Error).message);
+            console.error(' ', err.message);
         }
     }
 
     console.log(`\n${passed}/${tests.length} tests passed.`);
 }
+
+module.exports = { test, expect, run };
