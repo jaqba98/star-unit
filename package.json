@@ -6,7 +6,7 @@
   "author": "Jakub Olejarczyk",
   "license": "ISC",
   "main": "index.js",
-  "scripts": {
-    "test": "node packages/cli/src/run"
+  "devDependencies": {
+    "@star-unit/js": "^1.0.0"
   }
 }

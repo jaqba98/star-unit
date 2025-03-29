@@ -1,9 +1,0 @@
-{
-  "name": "@star-unit/cli",
-  "version": "1.0.2",
-  "description": "",
-  "keywords": [],
-  "author": "Jakub Olejarczyk",
-  "license": "ISC",
-  "main": "index.js"
-}
