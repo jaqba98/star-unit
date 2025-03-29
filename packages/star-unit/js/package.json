@@ -5,5 +5,5 @@
   "keywords": [],
   "author": "Jakub Olejarczyk",
   "license": "ISC",
-  "main": "src/index.js"
+  "main": "src/run.js"
 }

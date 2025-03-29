@@ -1,23 +1,9 @@
-const tests = [];
-
-function test(name, fn) {
-    tests.push({ name, fn });
-}
-
-function expect(received) {
-    return {
-        toBe(expected) {
-            if (received !== expected) {
-                throw new Error(`Expected ${received} to be ${expected}`);
-            }
-        }
-    };
-}
+const TestStore = require("./store/tests.store");
 
 async function run() {
     let passed = 0;
 
-    for (const { name, fn } of tests) {
+    for (const { name, fn } of TestStore.tests) {
         try {
             await fn();
             console.log(`✓ ${name}`);
@@ -28,7 +14,7 @@ async function run() {
         }
     }
 
-    console.log(`\n${passed}/${tests.length} tests passed.`);
+    console.log(`\n${passed}/${TestStore.tests.length} tests passed.`);
 }
 
-module.exports = { test, expect, run };
+module.exports = { run };

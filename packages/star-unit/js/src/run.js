@@ -1,4 +1,4 @@
-const { run: index } = require('./minitest');
+const { run: run } = require('./minitest');
 const fs = require('fs');
 const path = require('path');
 
@@ -19,4 +19,4 @@ function loadTestFilesFrom(dir) {
 }
 
 loadTestFilesFrom(rootDir);
-index();
+run();

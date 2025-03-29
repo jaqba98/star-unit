@@ -1,4 +1,4 @@
-const { test, expect } = require('@star-unit/js/src/minitest');
+const { expect, test } = require("../star-unit/js/index");
 const { add, multiply } = require('./math');
 
 test('add works', () => {
