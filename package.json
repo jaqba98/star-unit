@@ -2,14 +2,10 @@
   "name": "star-unit",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
   "author": "Jakub Olejarczyk",
   "license": "ISC",
   "main": "index.js",
-  "keywords": [],
-  "devDependencies": {
-    "@types/node": "^22.13.10",
-    "typescript": "^5.8.2"
-  },
   "scripts": {
     "test": "node packages/cli/src/run"
   }
