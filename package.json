@@ -6,7 +6,11 @@
   "author": "Jakub Olejarczyk",
   "license": "ISC",
   "main": "index.js",
+  "scripts": {
+    "node_modules:rebuild": "rm -rf node_modules && npm install",
+    "star-unit/js:publish": "cd packages/star-unit/js && npm publish"
+  },
   "devDependencies": {
-    "@star-unit/js": "^1.0.3"
+    "@star-unit/js": "^1.0.4"
   }
 }

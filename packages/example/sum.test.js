@@ -1,4 +1,4 @@
-const { test, expect } = require('@star-unit/js/index');
+const { test, expect } = require('@star-unit/js');
 const sum = require('./sum');
 
 test('adds 1 + 2 to equal 3', () => {
