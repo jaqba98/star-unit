@@ -1,12 +1,12 @@
 {
   "name": "@star-unit/js",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "",
   "keywords": [],
   "author": "Jakub Olejarczyk",
   "license": "ISC",
-  "main": "src/index.js",
+  "main": "src/core/index.js",
   "bin": {
-    "suj": "src/cli.js"
+    "suj": "src/cli/index.js"
   }
 }
