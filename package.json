@@ -7,6 +7,6 @@
   "license": "ISC",
   "main": "index.js",
   "devDependencies": {
-    "@star-unit/js": "^1.0.0"
+    "@star-unit/js": "^1.0.3"
   }
 }
