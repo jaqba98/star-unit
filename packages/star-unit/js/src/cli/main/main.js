@@ -7,7 +7,7 @@ const program = new Command();
 program
     .name(`Star Unit (for JavaScript)`)
     .description('A lightweight tool for instant JavaScript unit testing.')
-    .version('1.0.13');
+    .version('1.0.15');
 
 program
     .command('init')
@@ -15,6 +15,13 @@ program
     .option('-r, --root <name>', 'Root to the root directory.', './packages')
     .action((params) => {
         ParamsStore.setStore(params);
+        new InitProgram().run();
+    });
+
+program
+    .command('test')
+    .description('Run the tests.')
+    .action(() => {
         new InitProgram().run();
     });
 

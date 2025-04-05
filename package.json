@@ -13,6 +13,6 @@
     "suj": "node packages/star-unit/js/src/cli init"
   },
   "devDependencies": {
-    "@star-unit/js": "^1.0.11"
+    "@star-unit/js": "^1.0.14"
   }
 }

@@ -1,15 +1,15 @@
 const {Config} = require("../../system/config");
+const {ConfigStore} = require("../../store/config.store");
 
-class InitConfigStep {
+class LoadConfigStep {
     constructor() {
         this.config = new Config();
     }
 
     run() {
         this.config.initDefault();
-        this.config.init();
-        this.config.save();
+        console.log(ConfigStore.root);
     }
 }
 
-module.exports = {InitConfigStep};
+module.exports = {LoadConfigStep};

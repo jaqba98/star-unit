@@ -1,6 +1,6 @@
 # Star Unit (for JavaScript) - CLI Tool
 
-**Version**: 1.0.13  
+**Version**: 1.0.15  
 **Command shortcut**: `suj`
 
 Star Unit is a lightweight command-line tool designed for instant JavaScript unit testing, particularly for projects using monorepos. It helps streamline the configuration and execution of unit tests in a simple and fast manner.
@@ -40,6 +40,24 @@ suj init --root ./modules
 ```
 
 This will set up the necessary configuration files and initialize Star Unit using the `./modules` directory as the root for unit testing.
+
+### `test`
+
+This command runs the tests in your project after the configuration has been initialized. It will execute the tests based on the settings you've provided.
+
+```bash
+suj test
+```
+
+#### Example Usage
+
+To run the tests:
+
+```bash
+suj test
+```
+
+Once the configuration is set up, this command will trigger the testing process for your project.
 
 ## License
 

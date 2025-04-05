@@ -3,6 +3,10 @@ const {ConfigStore} = require("../store/config.store");
 const {ParamsStore} = require("../store/params.store");
 
 class Config {
+    initDefault() {
+        ConfigStore.root = './packages';
+    }
+
     init() {
         ConfigStore.root = ParamsStore.getItem('root');
     }
