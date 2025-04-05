@@ -1,13 +1,14 @@
-const { StepRunner } = require("../system/step-runner");
-const { AStep } = require("../steps/a.step");
-const { BStep } = require("../steps/b.step");
+const {StepRunner} = require("../system/step-runner");
+const {InitConfigStep} = require("../steps/config/init-config.step");
 
 class InitProgram {
+    constructor() {
+        this.stepRunner = new StepRunner();
+    }
+
     run() {
-        const stepRunner = new StepRunner();
-        // todo: Add steps to init configuration
-        stepRunner.run([AStep, BStep]);
+        this.stepRunner.run([InitConfigStep]);
     }
 }
 
-module.exports = { InitProgram };
+module.exports = {InitProgram};
