@@ -1,68 +1,45 @@
 # Star Unit (for JavaScript) - CLI Tool
 
-**Version**: 1.0.12
+**Version**: 1.0.13  
 **Command shortcut**: `suj`
 
-Star Unit is a lightweight and efficient command-line tool designed to support instant unit testing in JavaScript projects. This CLI aims to streamline the configuration and execution of unit tests in a modular and fast way, especially suited for monorepo setups.
+Star Unit is a lightweight command-line tool designed for instant JavaScript unit testing, particularly for projects using monorepos. It helps streamline the configuration and execution of unit tests in a simple and fast manner.
 
 ## Getting Started
 
-To use the CLI, simply run the `suj` command followed by one of the available subcommands.
-
-### Installation
+To get started with Star Unit, you can install it globally using npm:
 
 ```bash
 npm install -g star-unit
 ```
 
-Once installed, you'll have access to the `suj` command.
+Once installed, you can run the tool using the `suj` command.
 
-## CLI Overview
+## CLI Commands
 
-```bash
-suj [command] [options]
-```
+### `init`
 
-### Available Commands
-
-#### `init`
-
-Initializes the configuration required by the Star Unit tool. This is usually the first command you should run to set up the testing environment for your project.
+This command initializes the necessary configuration required for Star Unit to work with your project. You will usually run this first to set up your testing environment.
 
 ```bash
 suj init
 ```
 
-##### Options
+#### Options
 
 - `-r, --root <name>`  
-  Define the path to the root directory of your packages/modules.  
+  Set the path to the root directory of your packages or modules.  
   **Default**: `./packages`
 
-##### Example
+#### Example Usage
+
+To initialize the configuration with a custom root directory:
 
 ```bash
 suj init --root ./modules
 ```
 
-This will create the necessary configuration files and initialize Star Unit to use the `./modules` folder as the root for unit testing.
-
-## Under the Hood
-
-Star Unit uses a modular system to keep configurations centralized and easily extendable. It stores CLI parameters using a custom in-memory `ParamsStore` and executes initialization logic through the `InitProgram` class.
-
-The CLI itself is built using [commander.js](https://github.com/tj/commander.js), providing a clean and extensible command-line experience.
-
-## Roadmap
-
-- Test discovery and execution
-- Watch mode for live testing
-- Custom test reporter integration
-- TypeScript support
-
-## Contributing
-
-Pull requests and issues are welcome! Feel free to open a discussion to suggest features or report bugs.
+This will set up the necessary configuration files and initialize Star Unit using the `./modules` directory as the root for unit testing.
 
 ## License
 
