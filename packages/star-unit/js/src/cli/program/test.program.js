@@ -1,6 +1,15 @@
+const { CheckConfigExistService } = require("../service/check-config-exist.service");
+const { ReadConfigService } = require("../service/read-config.service");
+
 class TestProgram {
-  run(args) {
-    console.log("Test program run: ", args);
+  constructor() {
+    this.checkConfigExistService = new CheckConfigExistService();
+    this.readConfigService = new ReadConfigService();
+  }
+
+  run(_args) {
+    if (!this.checkConfigExistService.check()) return;
+    this.readConfigService.read();
   }
 }
 
