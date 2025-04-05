@@ -11,11 +11,10 @@
   },
   "scripts": {
     "prettier": "npx prettier . --write",
-    "suj:init": "node packages/star-unit/js/src/cli init",
-    "suj:test": "node packages/star-unit/js/src/cli test"
+    "suj": "node packages/star-unit/js/src/cli test"
   },
   "devDependencies": {
-    "@star-unit/js": "^1.0.18",
+    "@star-unit/js": "^1.0.19",
     "prettier": "3.5.3"
   }
 }

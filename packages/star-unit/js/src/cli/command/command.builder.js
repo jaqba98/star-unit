@@ -25,7 +25,7 @@ class CommandBuilder {
     this.#getOptions(domainCommand).forEach((option) =>
       this.#createOption(command, option),
     );
-    command.action((args) => domainCommand.program.run(args));
+    command.action((args) => domainCommand.program.run(commandDomain, args));
   }
 
   #getOptions(domainCommands) {

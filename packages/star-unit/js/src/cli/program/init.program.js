@@ -5,7 +5,7 @@ class InitProgram {
     this.createConfigService = new CreateConfigService();
   }
 
-  run(args) {
+  run(commandDomain, args) {
     this.createConfigService.create(args);
   }
 }

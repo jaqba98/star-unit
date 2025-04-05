@@ -7,9 +7,10 @@ class TestProgram {
     this.readConfigService = new ReadConfigService();
   }
 
-  run(_args) {
+  run(commandDomain) {
     if (!this.checkConfigExistService.check()) return;
-    this.readConfigService.read();
+    const config = this.readConfigService.read(commandDomain);
+    console.log(config);
   }
 }
 
