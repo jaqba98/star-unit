@@ -6,4 +6,4 @@ class StepRunner {
     }
 }
 
-module.exports = { StepRunner };
+module.exports = {StepRunner};

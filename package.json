@@ -10,9 +10,9 @@
     "commander": "^13.1.0"
   },
   "scripts": {
-    "suj": "node packages/star-unit/js/src/cli"
+    "suj": "node packages/star-unit/js/src/cli init"
   },
   "devDependencies": {
-    "@star-unit/js": "^1.0.10"
+    "@star-unit/js": "^1.0.11"
   }
 }

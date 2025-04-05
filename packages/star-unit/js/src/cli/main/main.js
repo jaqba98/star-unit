@@ -1,17 +1,21 @@
-const { Command } = require('commander');
-const { NAME, VERSION } = require('../const/domain.const');
-const { PROGRAM_INIT } = require('../const/program.const');
-const { InitProgram } = require('../program/init.program');
+const {Command} = require('commander');
+const {InitProgram} = require('../program/init.program');
+const {ParamsStore} = require("../store/params.store");
 
 const program = new Command();
 
 program
-    .name(`${NAME} (for JavaScript)`)
+    .name(`Star Unit (for JavaScript)`)
     .description('A lightweight tool for instant JavaScript unit testing.')
-    .version(VERSION)
+    .version('1.0.11');
 
-program.command(PROGRAM_INIT)
+program
+    .command('init')
     .description('Initialize the configuration required by this tool.')
-    .action(() => new InitProgram().run());
+    .option('-r, --root <name>', 'Root to the root directory.', './packages')
+    .action((params) => {
+        ParamsStore.setStore(params);
+        new InitProgram().run();
+    });
 
 program.parse();

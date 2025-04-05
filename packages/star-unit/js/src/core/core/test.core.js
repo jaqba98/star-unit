@@ -1,4 +1,4 @@
-const TestsStore = require('../../cli/store/tests.store');
+const TestsStore = require('../../cli/system/tests.store');
 
 class TestCore {
     constructor(name, fn) {
