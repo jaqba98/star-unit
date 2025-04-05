@@ -1,13 +1,13 @@
-const {FileUtil} = require("../util/file.util");
+const { FileUtil } = require("../util/file.util");
 
 class CreateConfigService {
-    constructor() {
-        this.fileUtil = new FileUtil();
-    }
+  constructor() {
+    this.fileUtil = new FileUtil();
+  }
 
-    create(args) {
-        this.fileUtil.write('star-unit.config.json', args);
-    }
+  create(args) {
+    this.fileUtil.write("star-unit.config.json", args);
+  }
 }
 
-module.exports = {CreateConfigService};
+module.exports = { CreateConfigService };

@@ -1,7 +1,7 @@
 class ToBeMatcher {
-    toBe(received, expected) {
-        return received === expected;
-    }
+  toBe(received, expected) {
+    return received === expected;
+  }
 }
 
 module.exports = ToBeMatcher;
