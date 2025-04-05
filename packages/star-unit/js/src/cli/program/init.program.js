@@ -1,13 +1,12 @@
-const {StepRunner} = require("../system/step-runner");
-const {InitConfigStep} = require("../steps/config/init-config.step");
+const {CreateConfigService} = require("../service/create-config.service");
 
 class InitProgram {
     constructor() {
-        this.stepRunner = new StepRunner();
+        this.createConfigService = new CreateConfigService();
     }
 
-    run() {
-        this.stepRunner.run([InitConfigStep]);
+    run(args) {
+        this.createConfigService.create(args);
     }
 }
 

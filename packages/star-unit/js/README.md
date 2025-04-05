@@ -1,25 +1,25 @@
 # Star Unit (for JavaScript) - CLI Tool
 
-**Version**: 1.0.15  
+**Version**: 1.0.16  
 **Command shortcut**: `suj`
 
-Star Unit is a lightweight command-line tool designed for instant JavaScript unit testing, particularly for projects using monorepos. It helps streamline the configuration and execution of unit tests in a simple and fast manner.
+Star Unit is a lightweight command-line tool designed for instant JavaScript unit testing, particularly in monorepo-style projects. It helps you set up and run unit tests quickly with minimal configuration.
 
 ## Getting Started
 
-To get started with Star Unit, you can install it globally using npm:
+Install Star Unit globally using npm:
 
 ```bash
 npm install -g star-unit
 ```
 
-Once installed, you can run the tool using the `suj` command.
+Once installed, you can use the `suj` command in your terminal.
 
 ## CLI Commands
 
 ### `init`
 
-This command initializes the necessary configuration required for Star Unit to work with your project. You will usually run this first to set up your testing environment.
+Initializes the configuration required for Star Unit to run tests in your project.
 
 ```bash
 suj init
@@ -27,23 +27,23 @@ suj init
 
 #### Options
 
-- `-r, --root <name>`  
-  Set the path to the root directory of your packages or modules.  
-  **Default**: `./packages`
+- `-r, --root <root>`  
+  Path to the root directory of your codebase.  
+  **Default**: `./`
 
 #### Example Usage
 
-To initialize the configuration with a custom root directory:
-
 ```bash
-suj init --root ./modules
+suj init --root ./packages
 ```
 
-This will set up the necessary configuration files and initialize Star Unit using the `./modules` directory as the root for unit testing.
+This command prepares the necessary configuration files and sets the provided root directory for test discovery.
+
+---
 
 ### `test`
 
-This command runs the tests in your project after the configuration has been initialized. It will execute the tests based on the settings you've provided.
+Runs unit tests in your project. Make sure you have initialized the configuration first using `suj init`.
 
 ```bash
 suj test
@@ -51,13 +51,11 @@ suj test
 
 #### Example Usage
 
-To run the tests:
-
 ```bash
 suj test
 ```
 
-Once the configuration is set up, this command will trigger the testing process for your project.
+This will execute all unit tests based on your current Star Unit setup.
 
 ## License
 
