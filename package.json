@@ -14,7 +14,7 @@
     "suj": "node packages/star-unit/js/src/cli test"
   },
   "devDependencies": {
-    "@star-unit/js": "1.0.23",
+    "@star-unit/js": "1.0.25",
     "prettier": "3.5.3"
   }
 }

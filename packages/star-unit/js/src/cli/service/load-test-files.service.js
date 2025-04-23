@@ -9,7 +9,12 @@ class LoadTestFilesService {
 
   load(config) {
     const rootDir = this.pathUtil.join(process.cwd(), config.root);
-    return this.fileUtil.readFiles(rootDir, '.test.js');
+    if (this.fileUtil.exist(rootDir)) {
+      const testFiles = this.fileUtil.readFiles(rootDir, '.test.js');
+      for (const testFile of testFiles) {
+        require(testFile);
+      }
+    }
   }
 }
 
