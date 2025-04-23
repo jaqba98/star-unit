@@ -1,6 +1,6 @@
 # Star Unit (for JavaScript) - CLI Tool
 
-**Version**: 1.0.20  
+**Version**: 1.0.23  
 **Command shortcut**: `suj`
 
 Star Unit is a lightweight command-line tool designed for instant JavaScript unit testing, particularly in monorepo-style projects. It helps you set up and run unit tests quickly with minimal configuration.

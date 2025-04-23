@@ -26,6 +26,7 @@ class FileUtil {
         this.readFiles(fullPath, ext, files);
       } else if (entry.isFile() && fullPath.endsWith(ext)) {
         files.push(fullPath);
+        require(fullPath);
       }
     }
     return files;
