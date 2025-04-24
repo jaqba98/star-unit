@@ -26,5 +26,5 @@ test("should return correct result when using divide", () => {
 });
 
 test("should throw an error when using divide with zero", () => {
-  expect(() => divide(10, 2)).toThrow("Cannot divide by zero");
+  expect(() => divide(10, 0)).toThrow("Cannot divide by zero");
 });

@@ -5,6 +5,7 @@ const test = (name, fn) => {
   const id = v4();
   TestsStore.id = id;
   TestsStore.tests[id] = { id, name, callback: fn, correct: true };
+  fn();
 };
 
 module.exports = { test };
