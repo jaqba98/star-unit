@@ -1,7 +1,7 @@
 const { ExpectCore } = require("../core/expect.core");
 
-const expect = (received) => {
-  return new ExpectCore(received);
+const expect = (expectCallback) => {
+  return new ExpectCore(expectCallback);
 };
 
 module.exports = { expect };

@@ -1,6 +1,6 @@
 class ToBeMatcher {
-  run(received, expected) {
-    return Object.is(received, expected);
+  run(expectCallback, expectValue) {
+    return Object.is(expectCallback(), expectValue);
   }
 }
 
