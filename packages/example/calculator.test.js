@@ -1,10 +1,10 @@
 const { test, expect } = require("@star-unit/js");
-const { sum, subtract, multiply, divide } = require("./calculator");
+const { add, subtract, multiply, divide } = require("./calculator");
 
-test("should return correct result when using sum", () => {
-  expect(sum(1, 2)).toBe(3);
-  expect(sum(4, 8)).toBe(12);
-  expect(sum(-2, 5)).toBe(3);
+test("should return correct result when using add", () => {
+  expect(add(1, 2)).toBe(3);
+  expect(add(4, 8)).toBe(12);
+  expect(add(-2, 5)).toBe(3);
 });
 
 test("should return correct result when using subtract", () => {

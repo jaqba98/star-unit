@@ -1,4 +1,4 @@
-const calculator = (a, b) => a + b;
+const add = (a, b) => a + b;
 
 const subtract = (a, b) => a - b;
 
@@ -11,4 +11,4 @@ const divide = (a, b) => {
   return a / b;
 };
 
-module.exports = { sum: calculator, subtract, multiply, divide };
+module.exports = { add, subtract, multiply, divide };
