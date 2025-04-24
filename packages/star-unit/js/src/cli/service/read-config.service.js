@@ -6,11 +6,11 @@ class ReadConfigService {
   }
 
   read(commandDomain) {
-    const config = this.fileUtil.readJson('star-unit.config.json');
+    const config = this.fileUtil.readJson("star-unit.config.json");
     const options = commandDomain.init.options;
     return {
-      root: config.root || options.root.defaultValue
-    }
+      root: config.root || options.root.defaultValue,
+    };
   }
 }
 

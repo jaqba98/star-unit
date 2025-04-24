@@ -1,6 +1,6 @@
 class ToBeMatcher {
-  toBe(received, expected) {
-    return received === expected;
+  run(received, expected) {
+    return Object.is(received, expected);
   }
 }
 
