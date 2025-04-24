@@ -1,4 +1,6 @@
 class TestsStore {
+  static currentId;
+
   static tests = [];
 }
 

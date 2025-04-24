@@ -1,4 +1,5 @@
 const ToBeMatcher = require("../matchers/to-be.matcher");
+const TestsStore = require("../store/tests.store");
 
 class ExpectCore {
   #received;
@@ -10,6 +11,7 @@ class ExpectCore {
   }
 
   toBe(expected) {
+    console.log(TestsStore.currentId);
     return this.#toBeMatcher.toBe(this.#received, expected);
   }
 }

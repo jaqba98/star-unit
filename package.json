@@ -7,14 +7,15 @@
   "license": "ISC",
   "main": "index.js",
   "dependencies": {
-    "commander": "^13.1.0"
+    "commander": "^13.1.0",
+    "uuid": "^11.1.0"
   },
   "scripts": {
     "prettier": "npx prettier . --write",
     "suj": "node packages/star-unit/js/src/cli test"
   },
   "devDependencies": {
-    "@star-unit/js": "1.0.25",
+    "@star-unit/js": "file:packages/star-unit/js",
     "prettier": "3.5.3"
   }
 }
