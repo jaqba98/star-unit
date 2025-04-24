@@ -1,7 +1,11 @@
-const TestCore = require("../core/test.core");
+const { v4 } = require("uuid");
+const { TestsStore } = require("../store/tests.store");
 
 const test = (name, fn) => {
-  return new TestCore(name, fn);
+  const id = v4();
+  TestsStore.id = id;
+  TestsStore.tests[id] = { id, name, correct: true };
+  fn();
 };
 
-module.exports = test;
+module.exports = { test };

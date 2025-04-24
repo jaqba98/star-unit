@@ -4,4 +4,4 @@ class ToBeMatcher {
   }
 }
 
-module.exports = ToBeMatcher;
+module.exports = { ToBeMatcher };

@@ -1,7 +1,7 @@
 class TestsStore {
-  static currentId;
+  static id;
 
   static tests = {};
 }
 
-module.exports = TestsStore;
+module.exports = { TestsStore };
