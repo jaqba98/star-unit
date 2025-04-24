@@ -11,8 +11,8 @@ class ExpectCore {
   }
 
   toBe(expected) {
-    console.log(TestsStore.currentId);
-    return this.#toBeMatcher.toBe(this.#received, expected);
+    const t = this.#toBeMatcher.toBe(this.#received, expected);
+    TestsStore.tests[TestsStore.currentId].expects.push(t);
   }
 }
 

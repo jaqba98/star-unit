@@ -1,7 +1,7 @@
 class TestsStore {
   static currentId;
 
-  static tests = [];
+  static tests = {};
 }
 
 module.exports = TestsStore;

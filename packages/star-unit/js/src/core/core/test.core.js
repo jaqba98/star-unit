@@ -5,7 +5,7 @@ class TestCore {
   constructor(name, fn) {
     const id = v4();
     TestsStore.currentId = id;
-    TestsStore.tests.push({ id, name });
+    TestsStore.tests[id] = { id, name, expects: [] };
     fn(id);
   }
 }

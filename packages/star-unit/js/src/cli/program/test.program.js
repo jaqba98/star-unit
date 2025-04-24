@@ -2,6 +2,7 @@ const { CheckConfigExistService } = require("../service/check-config-exist.servi
 const { ReadConfigService } = require("../service/read-config.service");
 const { LoadTestFilesService } = require("../service/load-test-files.service");
 const { TestResultService } = require("../service/test-result.service");
+const TestsStore = require("../../core/store/tests.store");
 
 class TestProgram {
   constructor() {

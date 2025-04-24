@@ -2,21 +2,21 @@ const TestsStore = require("../../core/store/tests.store");
 
 class TestResultService {
   result() {
-    console.log(TestsStore.tests);
-    // let passed = 0;
-    // for (const { id, name, fn } of TestsStore.tests) {
-    //   fn(id)
-    //   console.log(id, name, fn);
-    //   // try {
-    //   //   const t = fn();
-    //   //   console.log(`✓ ${name}`);
-    //   //   passed++;
-    //   // } catch (err) {
-    //   //   console.error(`✗ ${name}`);
-    //   //   console.error(' ', err.message);
-    //   // }
-    // }
-    // console.log(`\n${passed}/${TestsStore.tests.length} tests passed.`);
+    let passed = 0;
+    for (const { id, name, expects } of Object.values(TestsStore.tests)) {
+      try {
+        if (expects.some((e) => e === false)) {
+          console.error(`✗ ${name}`);
+          continue;
+        }
+        console.log(`✓ ${name} ${expects}`);
+        passed++;
+      } catch (err) {
+        console.error(`✗ ${name}`);
+        console.error(' ', err.message);
+      }
+    }
+    console.log(`\n${passed}/${Object.values(TestsStore.tests).length} tests passed.`);
   }
 }
 
