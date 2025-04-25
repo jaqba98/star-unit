@@ -2,7 +2,8 @@ const { TestsStore } = require("../../store/tests.store");
 
 class TestsSummaryService {
   getSummary() {
-    let passed = 0, all = 0;
+    let passed = 0,
+      all = 0;
     const tests = Object.values(TestsStore.tests).reduce((acc, curr) => {
       if (!acc[curr.describe]) {
         acc[curr.describe] = [];
@@ -20,9 +21,9 @@ class TestsSummaryService {
           console.error(`✗ ${describe} ${description}`);
         }
         all++;
-      })
+      });
       console.log("");
-    })
+    });
     console.log(`\n${passed}/${all} tests passed.`);
   }
 }
