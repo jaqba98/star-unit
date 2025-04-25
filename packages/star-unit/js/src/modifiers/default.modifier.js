@@ -4,7 +4,9 @@ const { TestsStore } = require("../store/tests.store");
 const { ToBeMatcher } = require("../matchers/to-be.matcher");
 const { ToThrowMatcher } = require("../matchers/to-throw.matcher");
 const { ToEqualMatcher } = require("../matchers/to-equal.matcher");
-const { ToBeGreaterThanMatcher } = require("../matchers/to-be-greater-than.matcher");
+const {
+  ToBeGreaterThanMatcher,
+} = require("../matchers/to-be-greater-than.matcher");
 const { ToBeLessThanMatcher } = require("../matchers/to-be-less-than.matcher");
 const { ToBeNullMatcher } = require("../matchers/to-be-null.matcher");
 const { ToBeTruthyMatcher } = require("../matchers/to-be-truthy.matcher");
