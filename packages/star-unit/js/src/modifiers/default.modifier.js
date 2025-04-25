@@ -7,6 +7,7 @@ const { ToEqualMatcher } = require("../matchers/to-equal.matcher");
 const { ToBeGreaterThanMatcher } = require("../matchers/to-be-greater-than.matcher");
 const { ToBeLessThanMatcher } = require("../matchers/to-be-less-than.matcher");
 const { ToBeNullMatcher } = require("../matchers/to-be-null.matcher");
+const { ToBeTruthyMatcher } = require("../matchers/to-be-truthy.matcher");
 
 class DefaultModifier {
   #toBeMatcher;
@@ -15,6 +16,7 @@ class DefaultModifier {
   #toBeGreaterThanMatcher;
   #toBeLessThanMatcher;
   #toBeNullMatcher;
+  #toBeTruthyMatcher;
 
   constructor() {
     this.#toBeMatcher = new ToBeMatcher();
@@ -23,6 +25,7 @@ class DefaultModifier {
     this.#toBeGreaterThanMatcher = new ToBeGreaterThanMatcher();
     this.#toBeLessThanMatcher = new ToBeLessThanMatcher();
     this.#toBeNullMatcher = new ToBeNullMatcher();
+    this.#toBeTruthyMatcher = new ToBeTruthyMatcher();
   }
 
   #run(matcher, value = undefined) {
@@ -54,6 +57,10 @@ class DefaultModifier {
 
   toBeNull() {
     this.#run(this.#toBeNullMatcher);
+  }
+
+  toBeTruthy() {
+    this.#run(this.#toBeTruthyMatcher);
   }
 }
 
