@@ -1,10 +1,10 @@
 class ToThrowMatcher {
-  run(expectCallback, expectValue) {
+  run(callback, value) {
     try {
-      expectCallback();
+      callback();
       return false;
     } catch (e) {
-      return e.message === expectValue;
+      return e.message === value;
     }
   }
 }
