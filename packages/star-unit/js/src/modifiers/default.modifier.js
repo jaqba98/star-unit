@@ -5,18 +5,21 @@ const { ToBeMatcher } = require("../matchers/to-be.matcher");
 const { ToThrowMatcher } = require("../matchers/to-throw.matcher");
 const { ToEqualMatcher } = require("../matchers/to-equal.matcher");
 const { ToBeGreaterThanMatcher } = require("../matchers/to-be-greater-than.matcher");
+const { ToBeLessThanMatcher } = require("../matchers/to-be-less-than.matcher");
 
 class DefaultModifier {
   #toBeMatcher;
   #toThrowMatcher;
   #toEqualMatcher;
   #toBeGreaterThanMatcher;
+  #toBeLessThanMatcher;
 
   constructor() {
     this.#toBeMatcher = new ToBeMatcher();
     this.#toThrowMatcher = new ToThrowMatcher();
     this.#toEqualMatcher = new ToEqualMatcher();
     this.#toBeGreaterThanMatcher = new ToBeGreaterThanMatcher();
+    this.#toBeLessThanMatcher = new ToBeLessThanMatcher();
   }
 
   #run(matcher, value = undefined) {
@@ -40,6 +43,10 @@ class DefaultModifier {
 
   toBeGreaterThan(value) {
     this.#run(this.#toBeGreaterThanMatcher, value);
+  }
+
+  toBeLessThan(value) {
+    this.#run(this.#toBeLessThanMatcher, value);
   }
 }
 
