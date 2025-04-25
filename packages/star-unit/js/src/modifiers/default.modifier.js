@@ -3,13 +3,13 @@ const { TestStore } = require("../store/test.store");
 
 class DefaultModifier {
   toBe(value) {
-    ExpectStore.setValue(value);
-    console.log(value, TestStore.getDescription(), " --- ", ExpectStore.getCallback(), ExpectStore.getValue());
+    ExpectStore.value = value;
+    console.log(TestStore.id, TestStore.description, TestStore.success, " --- ", ExpectStore.callback, ExpectStore.value);
   }
 
   toThrow(value) {
-    ExpectStore.setValue(value);
-    console.log(value, TestStore.getDescription(), " --- ", ExpectStore.getCallback(), ExpectStore.getValue());
+    ExpectStore.value = value;
+    console.log(TestStore.id, TestStore.description, TestStore.success, " --- ", ExpectStore.callback, ExpectStore.value);
   }
 }
 

@@ -1,14 +1,12 @@
 class TestStore {
+  static id;
   static description;
-
-  static setDescription = (description) => (TestStore.description = description);
-  static getDescription = () => {
-    if (TestStore.description === null) throw new Error("Description not set");
-    return TestStore.description;
-  };
+  static success;
 
   static reset() {
+    TestStore.id = null;
     TestStore.description = null;
+    TestStore.success = null;
   }
 }
 
