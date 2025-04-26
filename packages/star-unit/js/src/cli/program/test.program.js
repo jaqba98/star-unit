@@ -1,9 +1,8 @@
-const {
-  CheckConfigExistService,
-} = require("../service/check-config-exist.service");
+const { CheckConfigExistService } = require("../service/check-config-exist.service");
 const { ReadConfigService } = require("../service/read-config.service");
 const { LoadTestFilesService } = require("../service/load-test-files.service");
 const { TestsSummaryService } = require("../service/tests-summary.service");
+const { LogDescribesService } = require("../../service/describe/log-describes.service");
 
 class TestProgram {
   constructor() {
@@ -18,6 +17,7 @@ class TestProgram {
     const config = this.readConfigService.read(commandDomain);
     this.loadTestFilesService.load(config);
     this.testsSummaryService.getSummary();
+    new LogDescribesService().log();
   }
 }
 

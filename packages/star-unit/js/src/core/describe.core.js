@@ -1,12 +1,11 @@
-const { v4 } = require("uuid");
-const { DescribeStore } = require("../store/describe.store");
+const { SetDescribeService } = require("../service/describe/set-describe.service");
+const { EndDescribeService } = require("../service/describe/end-describe.service");
 
 class DescribeCore {
   constructor(description, callback) {
-    DescribeStore.reset();
-    DescribeStore.id = v4();
-    DescribeStore.description = description;
+    new SetDescribeService().set(description);
     callback();
+    new EndDescribeService().end();
   }
 }
 
