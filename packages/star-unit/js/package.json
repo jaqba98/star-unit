@@ -5,7 +5,7 @@
   "keywords": [],
   "author": "Jakub Olejarczyk",
   "license": "ISC",
-  "main": "src/api/index.js",
+  "main": "./src/spec/spec.js",
   "bin": {
     "suj": "src/cli/index.js"
   }
