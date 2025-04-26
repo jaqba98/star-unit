@@ -16,7 +16,7 @@ class LogDescribesService {
   #printNode(node, nodeMap, prefix = '', isLast = true) {
     const connector = isLast ? '└── ' : '├── ';
     console.log(prefix + connector + node.description);
-    this.#printTestResults(prefix + (isLast ? '    ' : '│   '));
+    this.#printTestResults(prefix + (isLast ? '    ' : '│   '), node.tests);
     const children = Object.values(nodeMap).filter(child => child.parent === node.id);
     const newPrefix = prefix + (isLast ? '    ' : '│   ');
     children.forEach((child, index) => {
@@ -25,14 +25,9 @@ class LogDescribesService {
     });
   }
 
-  #printTestResults(prefix) {
-    const testResults = [
-      '✔ test 1 passed',
-      '✔ test 2 passed',
-      '✔ test 3 passed'
-    ];
+  #printTestResults(prefix, testResults) {
     testResults.forEach(result => {
-      console.log(prefix + result);
+      console.log(prefix + '✔ ' + result);
     });
   }
 }

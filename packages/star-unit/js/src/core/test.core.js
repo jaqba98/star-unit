@@ -1,7 +1,8 @@
 const { v4 } = require("uuid");
-const { TestStore } = require("../store/test.store");
-const { TestsStore } = require("../store/tests.store");
+const { TestStore } = require("../service/test/test.store");
+const { TestsStore } = require("../service/test/tests.store");
 const { DescribeStore } = require("../service/describe/describe.store");
+const { DescribesStore } = require("../service/describe/describes.store");
 
 class TestCore {
   constructor(description, callback) {
@@ -14,6 +15,9 @@ class TestCore {
       description: TestStore.description,
       success: TestStore.success,
     };
+
+    DescribesStore.addTest(TestStore.description);
+
     callback();
   }
 }

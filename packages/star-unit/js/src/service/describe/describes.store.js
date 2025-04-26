@@ -10,8 +10,14 @@ class DescribesStore {
     DescribesStore.describes[id] = {
       id,
       description,
-      parent: currentParents[currentParents.length - 1]
+      parent: currentParents[currentParents.length - 1],
+      tests: []
     };
+  }
+
+  static addTest(description) {
+    const { id } = DescribeStore.get();
+    DescribesStore.describes[id].tests.push(description);
   }
 
   static addParent() {

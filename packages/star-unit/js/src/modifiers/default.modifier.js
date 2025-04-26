@@ -1,6 +1,6 @@
 const { ExpectStore } = require("../store/expect.store");
-const { TestStore } = require("../store/test.store");
-const { TestsStore } = require("../store/tests.store");
+const { TestStore } = require("../service/test/test.store");
+const { TestsStore } = require("../service/test/tests.store");
 const { ToBeMatcher } = require("../matchers/to-be.matcher");
 const { ToThrowMatcher } = require("../matchers/to-throw.matcher");
 const { ToEqualMatcher } = require("../matchers/to-equal.matcher");

@@ -1,4 +1,4 @@
-const { describe } = require("@star-unit/js");
+const { describe, test, expect } = require("@star-unit/js");
 
 describe("a", () => {
   describe("b", () => {
@@ -8,7 +8,11 @@ describe("a", () => {
     });
     describe("f", () => {});
     describe("g", () => {
-      describe("h", () => {});
+      describe("h", () => {
+        test("should pass", () => {
+          expect(() => true).toBe(true);
+        });
+      });
       describe("i", () => {});
     });
     describe("j", () => {});
