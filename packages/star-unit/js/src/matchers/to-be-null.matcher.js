@@ -1,6 +1,9 @@
 class ToBeNullMatcher {
-  run(callback) {
-    return callback() === null;
+  run(actual, expect) {
+    if (typeof actual === "function") {
+      return actual() === expect;
+    }
+    return actual === expect;
   }
 }
 

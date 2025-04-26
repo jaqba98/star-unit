@@ -14,14 +14,18 @@ describe("to-be", () => {
     return cart.reduce((count, item) => count + item.quantity, 0);
   }
 
+  test("should return 'shipped' status for order #0", () => {
+    expect(10).toBe(10);
+  });
+
   test("should return 'shipped' status for order #1", () => {
     const result = () => getOrderStatus(1);
-    // expect(result).toBe("shipped");
+    expect(result).toBe("shipped");
   });
 
   test("should return 'processing' status for order #2", () => {
     const result = () => getOrderStatus(2);
-    // expect(result).toBe("processing");
+    expect(result).toBe("processing");
   });
 
   test("should return correct item count in cart", () => {
@@ -30,12 +34,12 @@ describe("to-be", () => {
       { name: "Mouse", quantity: 2 },
     ];
     const result = () => getItemCount(cart);
-    // expect(result).toBe(3);
+    expect(result).toBe(3);
   });
 
   test("should fail if item count is incorrect", () => {
     const cart = [{ name: "Monitor", quantity: 1 }];
     const result = () => getItemCount(cart);
-    // expect(result).toBe(2);
+    expect(result).toBe(2);
   });
 });

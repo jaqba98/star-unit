@@ -1,17 +1,14 @@
-const { ExpectStore } = require("../store/expect.store");
-const { TestStore } = require("../service/test/test.store");
-const { TestsStore } = require("../service/test/tests.store");
 const { ToBeMatcher } = require("../matchers/to-be.matcher");
 const { ToThrowMatcher } = require("../matchers/to-throw.matcher");
 const { ToEqualMatcher } = require("../matchers/to-equal.matcher");
-const {
-  ToBeGreaterThanMatcher,
-} = require("../matchers/to-be-greater-than.matcher");
+const { ToBeGreaterThanMatcher } = require("../matchers/to-be-greater-than.matcher");
 const { ToBeLessThanMatcher } = require("../matchers/to-be-less-than.matcher");
 const { ToBeNullMatcher } = require("../matchers/to-be-null.matcher");
 const { ToBeTruthyMatcher } = require("../matchers/to-be-truthy.matcher");
+const { ExpectsStore } = require("../store/expects.store");
 
 class DefaultModifier {
+  #actual;
   #toBeMatcher;
   #toThrowMatcher;
   #toEqualMatcher;
@@ -20,7 +17,8 @@ class DefaultModifier {
   #toBeNullMatcher;
   #toBeTruthyMatcher;
 
-  constructor() {
+  constructor(actual) {
+    this.#actual = actual;
     this.#toBeMatcher = new ToBeMatcher();
     this.#toThrowMatcher = new ToThrowMatcher();
     this.#toEqualMatcher = new ToEqualMatcher();
@@ -30,39 +28,37 @@ class DefaultModifier {
     this.#toBeTruthyMatcher = new ToBeTruthyMatcher();
   }
 
-  #run(matcher, value = undefined) {
-    ExpectStore.value = value;
-    const success = matcher.run(ExpectStore.callback, value);
-    if (success) return;
-    TestsStore.tests[TestStore.id].success = false;
+  toBe(expect) {
+    this.#run(expect, this.#toBeMatcher, 'toBe');
   }
 
-  toBe(value) {
-    this.#run(this.#toBeMatcher, value);
+  toThrow(expect) {
+    this.#run(expect, this.#toThrowMatcher, 'toThrow');
   }
 
-  toThrow(value) {
-    this.#run(this.#toThrowMatcher, value);
+  toEqual(expect) {
+    this.#run(expect, this.#toEqualMatcher, 'toEqual');
   }
 
-  toEqual(value) {
-    this.#run(this.#toEqualMatcher, value);
+  toBeGreaterThan(expect) {
+    this.#run(expect, this.#toBeGreaterThanMatcher, 'toBeGreaterThan');
   }
 
-  toBeGreaterThan(value) {
-    this.#run(this.#toBeGreaterThanMatcher, value);
-  }
-
-  toBeLessThan(value) {
-    this.#run(this.#toBeLessThanMatcher, value);
+  toBeLessThan(expect) {
+    this.#run(expect, this.#toBeLessThanMatcher, 'toBeLessThan');
   }
 
   toBeNull() {
-    this.#run(this.#toBeNullMatcher);
+    this.#run(null, this.#toBeNullMatcher, 'toBeNull');
   }
 
   toBeTruthy() {
-    this.#run(this.#toBeTruthyMatcher);
+    this.#run(true, this.#toBeTruthyMatcher, 'toBeTruthy');
+  }
+
+  #run(expect, fn, matcher) {
+    const success = fn.run(this.#actual, expect);
+    ExpectsStore.save(success, this.#actual, matcher, expect);
   }
 }
 

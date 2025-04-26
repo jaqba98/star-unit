@@ -18,4 +18,4 @@ describe("a", () => {
   describe("k", () => {});
 });
 
-test("should pass 2", () => {});
+test("should pass", () => {});

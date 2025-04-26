@@ -1,6 +1,9 @@
 class ToBeTruthyMatcher {
-  run(callback) {
-    return !!callback();
+  run(actual, expect) {
+    if (typeof actual === "function") {
+      return actual() === expect;
+    }
+    return actual === expect;
   }
 }
 

@@ -1,6 +1,9 @@
 class ToEqualMatcher {
-  run(callback, value) {
-    return JSON.stringify(callback()) === JSON.stringify(value);
+  run(actual, expect) {
+    if (typeof actual === "function") {
+      return actual() === expect;
+    }
+    return actual === expect;
   }
 }
 

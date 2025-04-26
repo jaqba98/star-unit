@@ -11,7 +11,7 @@ const test = (description, fn) => {
 };
 
 const expect = (actual) => {
-  new ExpectCore(actual).run();
+  return new ExpectCore(actual);
 };
 
 module.exports = { describe, test, expect };

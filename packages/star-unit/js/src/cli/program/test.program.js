@@ -6,6 +6,7 @@ const { LoadTestFilesService } = require("../service/load-test-files.service");
 const { TestsSummaryService } = require("../service/tests-summary.service");
 const { DescribesStore } = require("../../store/describes.store");
 const { TestsStore } = require("../../store/tests.store");
+const { ExpectsStore } = require("../../store/expects.store");
 
 class TestProgram {
   constructor() {
@@ -24,6 +25,8 @@ class TestProgram {
     console.log(DescribesStore.describes);
     console.log('Tests:');
     console.log(TestsStore.tests);
+    console.log('Expect:');
+    console.log(ExpectsStore.expects);
   }
 }
 

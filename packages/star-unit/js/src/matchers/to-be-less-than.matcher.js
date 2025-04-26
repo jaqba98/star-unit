@@ -1,6 +1,9 @@
 class ToBeLessThanMatcher {
-  run(callback, value) {
-    return callback() < value;
+  run(actual, expect) {
+    if (typeof actual === "function") {
+      return actual() < expect;
+    }
+    return actual < expect;
   }
 }
 
