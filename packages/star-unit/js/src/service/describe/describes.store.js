@@ -10,8 +10,7 @@ class DescribesStore {
     DescribesStore.describes[id] = {
       id,
       description,
-      parent: currentParents[currentParents.length - 1],
-      parents: currentParents
+      parent: currentParents[currentParents.length - 1]
     };
   }
 
