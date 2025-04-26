@@ -11,7 +11,7 @@ class DescribesStore {
       id,
       description,
       parent: currentParents[currentParents.length - 1],
-      children: currentParents,
+      parents: currentParents
     };
   }
 
