@@ -1,4 +1,6 @@
-const { LogDescribesService } = require("../../service/describe/log-describes.service");
+const {
+  LogDescribesService,
+} = require("../../service/describe/log-describes.service");
 const { DescribesStore } = require("../../service/describe/describes.store");
 
 class TestsSummaryService {
@@ -9,9 +11,9 @@ class TestsSummaryService {
   }
 
   getSummary() {
-    console.log(DescribesStore.describes);
-    console.log("");
-    this.#logDescribesService.log();
+    // console.log(DescribesStore.describes);
+    // console.log("");
+    // this.#logDescribesService.log();
     // let passed = 0,
     //   all = 0;
     // const tests = Object.values(TestsStore.tests).reduce((acc, curr) => {

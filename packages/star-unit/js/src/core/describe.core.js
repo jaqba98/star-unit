@@ -1,3 +1,6 @@
+const { DescribeStore } = require("../store/describe.store");
+const { DescribesStore } = require("../store/describes.store");
+
 class DescribeCore {
   #description;
   #fn;
@@ -8,21 +11,12 @@ class DescribeCore {
   }
 
   run() {
-    console.log(`Running group: ${this.#description}`);
+    DescribeStore.reset();
+    DescribeStore.create(this.#description);
+    DescribesStore.save();
     this.#fn();
+    DescribesStore.removeLastParent();
   }
 }
 
 module.exports = { DescribeCore };
-
-// todo: Remove it!
-// const { SetDescribeService } = require("../service/describe/set-describe.service");
-// const { EndDescribeService } = require("../service/describe/end-describe.service");
-// class DescribeCore {
-//   constructor(description, callback) {
-//     new SetDescribeService().set(description);
-//     callback();
-//     new EndDescribeService().end();
-//   }
-// }
-// module.exports = { DescribeCore };

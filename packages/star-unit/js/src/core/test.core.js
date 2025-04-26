@@ -8,7 +8,7 @@ class TestCore {
   }
 
   run() {
-    console.log(`Running test: ${this.#description}`);
+    // console.log(`Running test: ${this.#description}`);
     this.#fn();
   }
 }
