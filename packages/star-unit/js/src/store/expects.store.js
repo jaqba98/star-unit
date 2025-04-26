@@ -1,3 +1,4 @@
+const deepcopy = require("deepcopy");
 const { v4 } = require("uuid");
 const { TestStore } = require("./test.store");
 
@@ -14,12 +15,12 @@ class ExpectsStore {
       testId,
       description: `expect(${actual}).${matcher}(${expect})`,
       expect,
-      received
+      received,
     };
   }
 
   static get() {
-    return ExpectsStore.expects;
+    return deepcopy(ExpectsStore.expects);
   }
 }
 

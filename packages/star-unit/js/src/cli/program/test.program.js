@@ -7,7 +7,7 @@ const { TestsSummaryService } = require("../service/tests-summary.service");
 const { DescribesStore } = require("../../store/describes.store");
 const { TestsStore } = require("../../store/tests.store");
 const { ExpectsStore } = require("../../store/expects.store");
-const { TestResultsStore } = require("../../store/test-results.store");
+const { TestResultBuilder } = require("../../builder/test-result.builder");
 
 class TestProgram {
   constructor() {
@@ -15,6 +15,7 @@ class TestProgram {
     this.readConfigService = new ReadConfigService();
     this.loadTestFilesService = new LoadTestFilesService();
     this.testsSummaryService = new TestsSummaryService();
+    this.aaa = new TestResultBuilder();
   }
 
   run(commandDomain) {
@@ -28,7 +29,8 @@ class TestProgram {
     // console.log(TestsStore.tests);
     // console.log('Expect:');
     // console.log(ExpectsStore.expects);
-    console.log(TestResultsStore.get());
+    // console.log(TestResultsStore.get());
+    console.log(JSON.stringify(this.aaa.build(), null, 2));
   }
 }
 

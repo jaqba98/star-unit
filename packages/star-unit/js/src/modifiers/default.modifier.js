@@ -1,11 +1,17 @@
 const { ToBeMatcher } = require("../matchers/to-be.matcher");
 const { ToThrowMatcher } = require("../matchers/to-throw.matcher");
 const { ToEqualMatcher } = require("../matchers/to-equal.matcher");
-const { ToBeGreaterThanMatcher } = require("../matchers/to-be-greater-than.matcher");
+const {
+  ToBeGreaterThanMatcher,
+} = require("../matchers/to-be-greater-than.matcher");
 const { ToBeLessThanMatcher } = require("../matchers/to-be-less-than.matcher");
 const { ToBeNullMatcher } = require("../matchers/to-be-null.matcher");
 const { ToBeTruthyMatcher } = require("../matchers/to-be-truthy.matcher");
 const { ExpectsStore } = require("../store/expects.store");
+const { TestStore } = require("../store/test.store");
+const { TestsStore } = require("../store/tests.store");
+const { DescribeStore } = require("../store/describe.store");
+const { DescribesStore } = require("../store/describes.store");
 
 class DefaultModifier {
   #actual;
@@ -29,36 +35,40 @@ class DefaultModifier {
   }
 
   toBe(expect) {
-    this.#run(expect, this.#toBeMatcher, 'toBe');
+    this.#run(expect, this.#toBeMatcher, "toBe");
   }
 
   toThrow(expect) {
-    this.#run(expect, this.#toThrowMatcher, 'toThrow');
+    this.#run(expect, this.#toThrowMatcher, "toThrow");
   }
 
   toEqual(expect) {
-    this.#run(expect, this.#toEqualMatcher, 'toEqual');
+    this.#run(expect, this.#toEqualMatcher, "toEqual");
   }
 
   toBeGreaterThan(expect) {
-    this.#run(expect, this.#toBeGreaterThanMatcher, 'toBeGreaterThan');
+    this.#run(expect, this.#toBeGreaterThanMatcher, "toBeGreaterThan");
   }
 
   toBeLessThan(expect) {
-    this.#run(expect, this.#toBeLessThanMatcher, 'toBeLessThan');
+    this.#run(expect, this.#toBeLessThanMatcher, "toBeLessThan");
   }
 
   toBeNull() {
-    this.#run(null, this.#toBeNullMatcher, 'toBeNull');
+    this.#run(null, this.#toBeNullMatcher, "toBeNull");
   }
 
   toBeTruthy() {
-    this.#run(true, this.#toBeTruthyMatcher, 'toBeTruthy');
+    this.#run(true, this.#toBeTruthyMatcher, "toBeTruthy");
   }
 
   #run(expect, fn, matcher) {
     const success = fn.run(this.#actual, expect);
     ExpectsStore.save(success, this.#actual, matcher, expect);
+    if (!success) {
+      TestsStore.updateTestSuccess(TestStore.get().id, false);
+      DescribesStore.updateDescribeSuccess(DescribeStore.get().id, false);
+    }
   }
 }
 
