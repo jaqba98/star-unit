@@ -5,6 +5,7 @@ const { ReadConfigService } = require("../service/read-config.service");
 const { LoadTestFilesService } = require("../service/load-test-files.service");
 const { TestsSummaryService } = require("../service/tests-summary.service");
 const { DescribesStore } = require("../../store/describes.store");
+const { TestsStore } = require("../../store/tests.store");
 
 class TestProgram {
   constructor() {
@@ -19,7 +20,10 @@ class TestProgram {
     const config = this.readConfigService.read(commandDomain);
     this.loadTestFilesService.load(config);
     // this.testsSummaryService.getSummary();
-    console.log(DescribesStore.get());
+    console.log('Describes:');
+    console.log(DescribesStore.describes);
+    console.log('Tests:');
+    console.log(TestsStore.tests);
   }
 }
 

@@ -16,6 +16,7 @@ class DescribeCore {
     DescribesStore.save();
     this.#fn();
     DescribesStore.removeLastParent();
+    DescribeStore.reset();
   }
 }
 
