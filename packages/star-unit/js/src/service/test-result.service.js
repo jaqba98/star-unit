@@ -1,5 +1,13 @@
-class TestsSummaryService {
+const { TestResultBuilder } = require("../builder/test-result.builder");
+
+class TestResultService {
   constructor() {
+    this.testResultBuilder = new TestResultBuilder();
+  }
+
+  getTestResult() {
+    const testResult = this.testResultBuilder.build();
+    console.log(JSON.stringify(testResult, null, 2));
   }
 
   getSummary() {
@@ -32,4 +40,4 @@ class TestsSummaryService {
   }
 }
 
-module.exports = { TestsSummaryService };
+module.exports = { TestResultService };

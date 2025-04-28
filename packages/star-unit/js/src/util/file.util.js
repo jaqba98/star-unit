@@ -18,16 +18,17 @@ class FileUtil {
     }
   }
 
-  readJsFiles(filePath, ext) {
+  readFiles(filePath, ext, files = []) {
     const entries = fs.readdirSync(filePath, { withFileTypes: true });
     for (const entry of entries) {
       const fullPath = path.join(filePath, entry.name);
       if (entry.isDirectory()) {
-        this.readJsFiles(fullPath, ext);
+        this.readFiles(fullPath, ext, files);
       } else if (entry.isFile() && fullPath.endsWith(ext)) {
-        require(fullPath);
+        files.push(fullPath);
       }
     }
+    return files;
   }
 }
 
