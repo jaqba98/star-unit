@@ -1,5 +1,6 @@
 const { FileUtil } = require("../util/file.util");
 const { LogUtil } = require("../util/log.util");
+const { configFileName } = require("../const/const");
 
 class CheckConfigExistService {
   constructor() {
@@ -8,7 +9,7 @@ class CheckConfigExistService {
   }
 
   check() {
-    const exist = this.fileUtil.exist("star-unit.config.json");
+    const exist = this.fileUtil.exist(configFileName);
     if (exist) return true;
     this.logUtil.error("The configuration file does not exist.");
     this.logUtil.error(

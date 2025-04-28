@@ -1,4 +1,5 @@
 const { FileUtil } = require("../util/file.util");
+const { configFileName } = require("../const/const");
 
 class ReadConfigService {
   constructor() {
@@ -6,7 +7,7 @@ class ReadConfigService {
   }
 
   read(commandDomain) {
-    const config = this.fileUtil.readJson("star-unit.config.json");
+    const config = this.fileUtil.readJson(configFileName);
     const options = commandDomain.init.options;
     return {
       root: config.root || options.root.defaultValue,

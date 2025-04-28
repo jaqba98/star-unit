@@ -1,5 +1,6 @@
 const { FileUtil } = require("../util/file.util");
 const { LogUtil } = require("../util/log.util");
+const { configFileName } = require("../const/const");
 
 class CreateConfigService {
   constructor() {
@@ -8,7 +9,7 @@ class CreateConfigService {
   }
 
   create(args) {
-    this.fileUtil.write("star-unit.config.json", args);
+    this.fileUtil.write(configFileName, args);
     this.logUtil.success("The configuration file was created successfully.");
   }
 }
