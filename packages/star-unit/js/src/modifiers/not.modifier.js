@@ -5,10 +5,10 @@ const { DescribeStore } = require("../store/describe.store");
 const { DescribesStore } = require("../store/describes.store");
 const { BaseModifier } = require("./base.modifier");
 
-class DefaultModifier extends BaseModifier {
+class NotModifier extends BaseModifier {
   constructor(actual) {
     super((expect, fn, matcher) => {
-      const success = fn.run(this.actual, expect);
+      const success = !fn.run(this.actual, expect);
       ExpectsStore.save(success, this.actual, matcher, expect);
       if (!success) {
         TestsStore.updateTestSuccess(TestStore.get().id, false);
@@ -18,4 +18,4 @@ class DefaultModifier extends BaseModifier {
   }
 }
 
-module.exports = { DefaultModifier };
+module.exports = { NotModifier };

@@ -40,6 +40,7 @@ describe("to-equal", () => {
     const getNumber = () => 5;
     const expectedNumber = 10;
 
-    expect(getNumber).toEqual(expectedNumber);
+    expect(getNumber).not.toEqual(expectedNumber);
+    expect(getNumber).not.toEqual(expectedNumber);
   });
 });
