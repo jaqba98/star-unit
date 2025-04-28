@@ -7,6 +7,7 @@
   "license": "ISC",
   "main": "index.js",
   "dependencies": {
+    "@star-unit/js": "file:packages/star-unit/js",
     "commander": "^13.1.0",
     "deepcopy": "^2.1.0",
     "uuid": "^11.1.0"
@@ -16,7 +17,6 @@
     "suj": "node packages/star-unit/js/src/cli test"
   },
   "devDependencies": {
-    "@star-unit/js": "1.1.0",
     "prettier": "3.5.3"
   }
 }

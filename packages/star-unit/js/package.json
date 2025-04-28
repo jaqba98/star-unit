@@ -7,6 +7,6 @@
   "license": "ISC",
   "main": "./src/spec/spec.js",
   "bin": {
-    "suj": "src/cli/index.js"
+    "suj": "./src/index.js"
   }
 }

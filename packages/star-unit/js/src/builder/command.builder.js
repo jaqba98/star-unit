@@ -1,6 +1,6 @@
 const { Command } = require("commander");
-const { commandDomain } = require("./command.domain");
-const { programDomain } = require("./program.domain");
+const { commandDomain } = require("../domain/command.domain");
+const { programDomain } = require("../domain/program.domain");
 
 class CommandBuilder {
   build() {
