@@ -1,64 +1,119 @@
-# Star Unit (for JavaScript) - CLI Tool
+# @star-unit/js
 
-**Version**: 1.1.0  
-**Command shortcut**: `suj`
+> A lightweight tool for instant JavaScript unit testing.
 
-Star Unit is a lightweight command-line tool designed for instant JavaScript unit testing, particularly in monorepo-style projects. It helps you set up and run unit tests quickly with minimal configuration.
-
-## Getting Started
-
-Install Star Unit globally using npm:
+## 📦 Installation
 
 ```bash
-npm install -g star-unit
+npm install @star-unit/js
 ```
 
-Once installed, you can use the `suj` command in your terminal.
+## 🚀 Quick Start
 
-## CLI Commands
+Initialize configuration:
+
+```bash
+npx suj init
+```
+
+Run tests:
+
+```bash
+npx suj test
+```
+
+> **Note:** After installation, the CLI is available via the `suj` command.
+
+## ✨ Features
+
+- Easy-to-use unit testing syntax (`describe`, `test`, `expect`).
+- Rich set of matchers.
+- Lightweight and fast.
+- Supports both frontend and backend JavaScript projects.
+
+## 🔥 CLI Commands
 
 ### `init`
 
-Initializes the configuration required for Star Unit to run tests in your project.
+**Initialize the configuration required by this tool.**
 
-```bash
-suj init
-```
-
-#### Options
-
-- `-r, --root <root>`  
-  Path to the root directory of your codebase.  
-  **Default**: `./`
-
-#### Example Usage
-
-```bash
-suj init --root ./packages
-```
-
-This command prepares the necessary configuration files and sets the provided root directory for test discovery.
-
----
+**Options:**
+- `-r, --root <root>` — Path to the root directory (default: `"./"`).
 
 ### `test`
 
-Runs unit tests in your project. Make sure you have initialized the configuration first using `suj init`.
+**Run unit tests.**
 
-```bash
-suj test
+**Options:**
+- _None._
+
+## 🛠️ API Reference
+
+### `describe(description, fn)`
+
+Groups related tests together.
+
+```javascript
+describe('Math operations', () => {
+  // tests here
+});
 ```
 
-#### Example Usage
+### `test(description, fn)`
 
-```bash
-suj test
+Defines a single unit test.
+
+```javascript
+test('adds numbers correctly', () => {
+  const result = 1 + 2;
+  expect(result).toBe(3);
+});
 ```
 
-This will execute all unit tests based on your current Star Unit setup.
+### `expect(actual)`
 
-## License
+Starts an assertion chain for a test result.
 
-MIT
+```javascript
+expect(4).toBe(4);
+```
 
-**Made with 💛 to simplify JavaScript testing.**
+## 🎯 Matchers
+
+Matchers are used to assert specific conditions:
+
+| Matcher                     | Description                             |
+|------------------------------|-----------------------------------------|
+| `.toBe(expected)`            | Asserts that value is exactly equal (`===`) |
+| `.toEqual(expected)`         | Asserts deep equality                  |
+| `.toThrow(expected?)`        | Asserts that a function throws an error |
+| `.toBeGreaterThan(expected)` | Asserts greater-than comparison        |
+| `.toBeLessThan(expected)`    | Asserts less-than comparison           |
+| `.toBeNull()`                | Asserts that value is null              |
+| `.toBeTruthy()`              | Asserts that value is truthy            |
+
+## 🧪 Example
+
+```javascript
+const { describe, test, expect } = require('@star-unit/js');
+
+describe('Array methods', () => {
+  test('push adds an item', () => {
+    const arr = [];
+    arr.push(1);
+    expect(arr.length).toBe(1);
+    expect(arr[0]).toBe(1);
+  });
+
+  test('pop removes the last item', () => {
+    const arr = [1, 2, 3];
+    const last = arr.pop();
+    expect(last).toBe(3);
+    expect(arr.length).toBe(2);
+  });
+});
+```
+
+## 📜 License
+
+ISC License.
