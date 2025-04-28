@@ -1,4 +1,6 @@
-const { CheckConfigExistService } = require("../service/check-config-exist.service");
+const {
+  CheckConfigExistService,
+} = require("../service/check-config-exist.service");
 const { ReadConfigService } = require("../service/read-config.service");
 const { LoadTestFilesService } = require("../service/load-test-files.service");
 const { TestResultService } = require("../service/test-result.service");

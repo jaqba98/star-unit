@@ -38,6 +38,7 @@ npx suj test
 **Initialize the configuration required by this tool.**
 
 **Options:**
+
 - `-r, --root <root>` — Path to the root directory (default: `"./"`).
 
 ### `test`
@@ -45,6 +46,7 @@ npx suj test
 **Run unit tests.**
 
 **Options:**
+
 - _None._
 
 ## 🛠️ API Reference
@@ -54,7 +56,7 @@ npx suj test
 Groups related tests together.
 
 ```javascript
-describe('Math operations', () => {
+describe("Math operations", () => {
   // tests here
 });
 ```
@@ -64,7 +66,7 @@ describe('Math operations', () => {
 Defines a single unit test.
 
 ```javascript
-test('adds numbers correctly', () => {
+test("adds numbers correctly", () => {
   const result = 1 + 2;
   expect(result).toBe(3);
 });
@@ -82,30 +84,30 @@ expect(4).toBe(4);
 
 Matchers are used to assert specific conditions:
 
-| Matcher                     | Description                             |
-|------------------------------|-----------------------------------------|
+| Matcher                      | Description                                 |
+| ---------------------------- | ------------------------------------------- |
 | `.toBe(expected)`            | Asserts that value is exactly equal (`===`) |
-| `.toEqual(expected)`         | Asserts deep equality                  |
-| `.toThrow(expected?)`        | Asserts that a function throws an error |
-| `.toBeGreaterThan(expected)` | Asserts greater-than comparison        |
-| `.toBeLessThan(expected)`    | Asserts less-than comparison           |
-| `.toBeNull()`                | Asserts that value is null              |
-| `.toBeTruthy()`              | Asserts that value is truthy            |
+| `.toEqual(expected)`         | Asserts deep equality                       |
+| `.toThrow(expected?)`        | Asserts that a function throws an error     |
+| `.toBeGreaterThan(expected)` | Asserts greater-than comparison             |
+| `.toBeLessThan(expected)`    | Asserts less-than comparison                |
+| `.toBeNull()`                | Asserts that value is null                  |
+| `.toBeTruthy()`              | Asserts that value is truthy                |
 
 ## 🧪 Example
 
 ```javascript
-const { describe, test, expect } = require('@star-unit/js');
+const { describe, test, expect } = require("@star-unit/js");
 
-describe('Array methods', () => {
-  test('push adds an item', () => {
+describe("Array methods", () => {
+  test("push adds an item", () => {
     const arr = [];
     arr.push(1);
     expect(arr.length).toBe(1);
     expect(arr[0]).toBe(1);
   });
 
-  test('pop removes the last item', () => {
+  test("pop removes the last item", () => {
     const arr = [1, 2, 3];
     const last = arr.pop();
     expect(last).toBe(3);

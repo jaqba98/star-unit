@@ -11,7 +11,7 @@ class TestsStore {
       id,
       description,
       success,
-      describeId: DescribeStore.get().id
+      describeId: DescribeStore.get().id,
     };
   }
 

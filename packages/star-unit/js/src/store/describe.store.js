@@ -21,7 +21,7 @@ class DescribeStore {
     return {
       id: DescribeStore.id,
       description: DescribeStore.description,
-      success: DescribeStore.success
+      success: DescribeStore.success,
     };
   }
 }
