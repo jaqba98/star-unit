@@ -1,13 +1,5 @@
-const {
-  LogDescribesService,
-} = require("../../service/describe/log-describes.service");
-const { DescribesStore } = require("../../service/describe/describes.store");
-
 class TestsSummaryService {
-  #logDescribesService;
-
   constructor() {
-    this.#logDescribesService = new LogDescribesService();
   }
 
   getSummary() {
