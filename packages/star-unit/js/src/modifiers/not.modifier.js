@@ -8,7 +8,7 @@ const { BaseModifier } = require("./base.modifier");
 class NotModifier extends BaseModifier {
   constructor(actual) {
     super((expect, fn, matcher) => {
-      const success = !fn.run(this.actual, expect);
+      const success = !fn(this.actual, expect);
       ExpectsStore.save(success, this.actual, matcher, expect);
       if (!success) {
         TestsStore.updateTestSuccess(TestStore.get().id, false);
