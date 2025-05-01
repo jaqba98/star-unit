@@ -3,19 +3,34 @@ const { TestsStore } = require("../store/tests.store");
 
 class TestCore {
   #description;
-  #fn;
+  #params;
 
-  constructor(description, fn) {
+  constructor(description) {
     this.#description = description;
-    this.#fn = fn;
+    this.#params = [];
   }
 
-  run() {
-    TestStore.reset();
-    TestStore.create(this.#description);
-    TestsStore.save();
-    this.#fn();
-    TestStore.reset();
+  params(params) {
+    this.#params = params ?? [];
+    return this;
+  }
+
+  create(fn) {
+    if (this.#params.length === 0) {
+      TestStore.reset();
+      TestStore.create(this.#description, this.#params);
+      TestsStore.save();
+      fn();
+      TestStore.reset();
+    } else {
+      this.#params.forEach((param) => {
+        TestStore.reset();
+        TestStore.create(this.#description, this.#params);
+        TestsStore.save();
+        fn(param);
+        TestStore.reset();
+      })
+    }
   }
 }
 

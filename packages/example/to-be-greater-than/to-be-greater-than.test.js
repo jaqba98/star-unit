@@ -1,35 +1,35 @@
 const { test, expect, describe } = require("@star-unit/js");
 
 describe("to-be-greater-than", () => {
-  test("should pass when value is greater than the expected", () => {
+  test("should pass when value is greater than the expected").create(() => {
     const getNumber = () => 10;
     const expectedValue = 5;
 
     expect(getNumber).toBeGreaterThan(expectedValue);
   });
 
-  test("should fail when value is not greater than the expected", () => {
+  test("should fail when value is not greater than the expected").create(() => {
     const getNumber = () => 3;
     const expectedValue = 5;
 
     expect(getNumber).toBeGreaterThan(expectedValue);
   });
 
-  test("should pass when value is equal to the expected", () => {
+  test("should pass when value is equal to the expected").create(() => {
     const getNumber = () => 5;
     const expectedValue = 5;
 
     expect(getNumber).toBeGreaterThan(expectedValue);
   });
 
-  test("should pass when value is greater than a negative number", () => {
+  test("should pass when value is greater than a negative number").create(() => {
     const getNumber = () => -3;
     const expectedValue = -5;
 
     expect(getNumber).toBeGreaterThan(expectedValue);
   });
 
-  test("should fail when value is less than a negative number", () => {
+  test("should fail when value is less than a negative number").create(() => {
     const getNumber = () => -6;
     const expectedValue = -5;
 

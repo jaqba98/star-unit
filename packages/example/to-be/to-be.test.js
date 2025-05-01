@@ -14,21 +14,21 @@ describe("to-be", () => {
     return cart.reduce((count, item) => count + item.quantity, 0);
   }
 
-  test("should return 'shipped' status for order #0", () => {
+  test("should return 'shipped' status for order #0").create(() => {
     expect(10).toBe(10);
   });
 
-  test("should return 'shipped' status for order #1", () => {
+  test("should return 'shipped' status for order #1").create(() => {
     const result = () => getOrderStatus(1);
     expect(result).toBe("shipped");
   });
 
-  test("should return 'processing' status for order #2", () => {
+  test("should return 'processing' status for order #2").create(() => {
     const result = () => getOrderStatus(2);
     expect(result).toBe("processing");
   });
 
-  test("should return correct item count in cart", () => {
+  test("should return correct item count in cart").create(() => {
     const cart = [
       { name: "Laptop", quantity: 1 },
       { name: "Mouse", quantity: 2 },
@@ -37,7 +37,7 @@ describe("to-be", () => {
     expect(result).toBe(3);
   });
 
-  test("should fail if item count is incorrect", () => {
+  test("should fail if item count is incorrect").create(() => {
     const cart = [{ name: "Monitor", quantity: 1 }];
     const result = () => getItemCount(cart);
     expect(result).toBe(2);

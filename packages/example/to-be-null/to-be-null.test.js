@@ -9,12 +9,12 @@ describe("to-be-null", () => {
     return users.find((user) => user.id === id) || null;
   }
 
-  test("should return null for non-existing user", () => {
+  test("should return null for non-existing user").create(() => {
     const result = () => findUserById(99);
     expect(result).toBeNull();
   });
 
-  test("should not return null for existing user", () => {
+  test("should not return null for existing user").create(() => {
     const result = () => findUserById(1);
     expect(result).toBeNull();
   });

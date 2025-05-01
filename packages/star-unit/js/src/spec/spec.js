@@ -6,8 +6,8 @@ const describe = (description, fn) => {
   new DescribeCore(description, fn).run();
 };
 
-const test = (description, fn) => {
-  new TestCore(description, fn).run();
+const test = (description) => {
+  return new TestCore(description);
 };
 
 const expect = (actual) => {
