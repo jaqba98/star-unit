@@ -2,14 +2,20 @@ const { TestResultBuilder } = require("../builder/test-result.builder");
 const { LogUtil } = require("../util/log.util");
 
 class TestResultService {
+  #failures = 0
+
   constructor() {
     this.testResultBuilder = new TestResultBuilder();
     this.logUtil = new LogUtil();
+    this.#failures = 0;
   }
 
   getTestResult() {
     const testResult = this.testResultBuilder.build();
     this.#writeDescribes(testResult);
+    if (this.#failures > 0) {
+      process.exit(1);
+    }
   }
 
   #writeDescribes(describes) {
@@ -59,6 +65,7 @@ class TestResultService {
     this.logUtil.error("\t\t" + "✗ " + expect.description);
     this.logUtil.error("\t\t" + "  Expect: " + expect.expect);
     this.logUtil.error("\t\t" + "  Received: " + expect.received);
+    this.#failures++;
   }
 }
 
