@@ -5,28 +5,21 @@ describe("to-equal", () => {
     const getObject = () => ({ a: 1, b: 2 });
     const expectedObject = { a: 1, b: 2 };
 
-    expect(getObject).toEqual(expectedObject);
-  });
-
-  test("should fail for unequal values").create(() => {
-    const getObject = () => ({ a: 1, b: 2 });
-    const expectedObject = { a: 1, b: 3 };
-
-    expect(getObject).toEqual(expectedObject);
+    expect(getObject).not.toEqual(expectedObject);
   });
 
   test("should pass for equal arrays").create(() => {
     const getArray = () => [1, 2, 3];
     const expectedArray = [1, 2, 3];
 
-    expect(getArray).toEqual(expectedArray);
+    expect(getArray).not.toEqual(expectedArray);
   });
 
   test("should fail for unequal arrays").create(() => {
     const getArray = () => [1, 2, 3];
     const expectedArray = [3, 2, 1];
 
-    expect(getArray).toEqual(expectedArray);
+    expect(getArray).not.toEqual(expectedArray);
   });
 
   test("should pass for equal primitive values").create(() => {

@@ -36,10 +36,4 @@ describe("to-be", () => {
     const result = () => getItemCount(cart);
     expect(result).toBe(3);
   });
-
-  test("should fail if item count is incorrect").create(() => {
-    const cart = [{ name: "Monitor", quantity: 1 }];
-    const result = () => getItemCount(cart);
-    expect(result).toBe(2);
-  });
 });

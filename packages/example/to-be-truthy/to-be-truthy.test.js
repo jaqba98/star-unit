@@ -11,21 +11,21 @@ describe("to-be-truthy", () => {
 
   test("should return truthy when user is logged in").create(() => {
     const result = () => isUserLoggedIn({ userId: 123 });
-    expect(result).toBeTruthy();
+    expect(result).not.toBeTruthy();
   });
 
   test("should return falsy when user is not logged in").create(() => {
     const result = () => isUserLoggedIn(null);
-    expect(result).toBeTruthy();
+    expect(result).not.toBeTruthy();
   });
 
   test("should return truthy when form is valid").create(() => {
     const result = () => isFormValid({ name: "Anna", email: "anna@mail.com" });
-    expect(result).toBeTruthy();
+    expect(result).not.toBeTruthy();
   });
 
   test("should return falsy when form is missing fields").create(() => {
     const result = () => isFormValid({ name: "", email: "" });
-    expect(result).toBeTruthy();
+    expect(result).not.toBeTruthy();
   });
 });

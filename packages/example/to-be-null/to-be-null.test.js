@@ -13,9 +13,4 @@ describe("to-be-null", () => {
     const result = () => findUserById(99);
     expect(result).toBeNull();
   });
-
-  test("should not return null for existing user").create(() => {
-    const result = () => findUserById(1);
-    expect(result).toBeNull();
-  });
 });

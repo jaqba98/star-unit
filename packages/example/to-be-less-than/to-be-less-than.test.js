@@ -17,24 +17,10 @@ describe("to-be-less-than", () => {
     expect(deliveryTime).toBeLessThan(30);
   });
 
-  test("delivery time should exceed limit for distant delivery").create(() => {
-    const deliveryTime = () => calculateDeliveryTimeInMinutes(15);
-    expect(deliveryTime).toBeLessThan(30);
-  });
-
   test("cart total should be under free shipping limit").create(() => {
     const cartItems = [
       { name: "Book", price: 20, quantity: 1 },
       { name: "Pen", price: 5, quantity: 2 },
-    ];
-    const total = () => getCartTotal(cartItems);
-    expect(total).toBeLessThan(50);
-  });
-
-  test("cart total should exceed free shipping limit").create(() => {
-    const cartItems = [
-      { name: "Monitor", price: 300, quantity: 1 },
-      { name: "Keyboard", price: 100, quantity: 1 },
     ];
     const total = () => getCartTotal(cartItems);
     expect(total).toBeLessThan(50);
