@@ -1,0 +1,10 @@
+stages:
+  - test
+
+run_star_unit_tests:
+  stage: test
+  image: node:23.11.0
+  before_script:
+    - npm install
+  script:
+    - suj test
