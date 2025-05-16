@@ -11,6 +11,7 @@ class ReadConfigService {
     const options = commandDomain.init.options;
     return {
       root: config.root || options.root.defaultValue,
+      ext: config.ext || options.ext.defaultValue,
     };
   }
 }

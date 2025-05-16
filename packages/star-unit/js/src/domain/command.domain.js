@@ -11,6 +11,11 @@ const commandDomain = {
         description: "Path to the root directory.",
         defaultValue: "./",
       },
+      ext: {
+        flags: "-e, --ext <root>",
+        description: "Test file extension.",
+        defaultValue: "test.js",
+      },
     },
     program: new InitProgram(),
   },

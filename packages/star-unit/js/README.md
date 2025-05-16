@@ -40,6 +40,7 @@ npx suj test
 **Options:**
 
 - `-r, --root <root>` — Path to the root directory (default: `"./"`).
+- `-e, --ext <root>` — Test file extension (default: `"test.js"`).
 
 ### `test`
 
